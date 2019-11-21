@@ -1,7 +1,13 @@
-FROM debian:latest
+FROM golang:alpine
+ 
+RUN apk update && apk add git
+ 
+COPY . /go/src/app/
+ 
+WORKDIR /go/src/app
 
-RUN mkdir /app
-WORKDIR /app
-ADD consignment-service /app/consignment-service
-
-CMD ["./consignment-service"]
+ 
+RUN go get -d -v
+RUN go install -v
+ 
+CMD ["app"]
