@@ -21,12 +21,14 @@ type Repository struct {
 	consignments []*pb.Consignment
 }
 
+// Create consignment
 func (repo *Repository) Create(consignment *pb.Consignment) (*pb.Consignment, error) {
 	updated := append(repo.consignments, consignment)
 	repo.consignments = updated
 	return consignment, nil
 }
 
+// GetAll the consignment
 func (repo *Repository) GetAll() []*pb.Consignment {
 	return repo.consignments
 }
@@ -64,7 +66,7 @@ func (s *service) GetConsignments(ctx context.Context, req *pb.GetRequest, res *
 }
 
 func main() {
-
+    fmt.Println("application starting ")
 	repo := &Repository{}
 
 	// Create a new service. Optionally include some options here.
