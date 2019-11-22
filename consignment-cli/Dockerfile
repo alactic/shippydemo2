@@ -1,6 +1,6 @@
 FROM golang:1.9.0 as builder
 
-WORKDIR /go/src/github.com/EwanValentine/shippy/consignment-cli
+WORKDIR /go/src/github.com/alactic/shippydemo2/consignment-cli/consignment-cli
 
 COPY . .
 

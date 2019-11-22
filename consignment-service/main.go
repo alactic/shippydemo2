@@ -8,7 +8,7 @@ import (
 
 	pb "github.com/alactic/shippydemo2/consignment-service/proto/consignment"
 	vesselProto "github.com/alactic/shippydemo2/vessel-service/proto/vessel"
-	"github.com/alactic/shippydemo2/vessel-service/datastore"
+	"github.com/alactic/shippydemo2/consignment-service/datastore"
 	"github.com/micro/go-micro"
 )
 

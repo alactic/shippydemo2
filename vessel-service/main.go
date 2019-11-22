@@ -48,6 +48,16 @@ func (s *service) FindAvailable(ctx context.Context, req *pb.Specification, res 
 	return nil
 }
 
+// // vessel-service/handler.go
+// func (s *service) Create(ctx context.Context, req *pb.Vessel, res *pb.Response) error {
+// 	if err := s.repository.Create(req); err != nil {
+// 		return err
+// 	}
+// 	res.Vessel = req
+// 	res.Created = true
+// 	return nil
+// }
+
 func main() {
 	vessels := []*pb.Vessel{
 		&pb.Vessel{Id: "vessel001", Name: "Boaty McBoatface", MaxWeight: 200000, Capacity: 500},
