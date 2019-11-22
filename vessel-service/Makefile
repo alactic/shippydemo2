@@ -1,5 +1,5 @@
 build:
-	protoc --proto_path=.:$GOPATH/src --go_out=. --micro_out=.   proto/vessel/vessel.proto
+	# protoc --proto_path=.:$GOPATH/src --go_out=. --micro_out=.   proto/vessel/vessel.proto
 	sudo docker build -t shippy-service-vessel .
 
 run:
