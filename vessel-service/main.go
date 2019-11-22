@@ -1,4 +1,3 @@
-// vessel-service/main.go
 package main
 
 import (
@@ -6,16 +5,14 @@ import (
 	"errors"
 	"fmt"
 
-	pb "github.com/alactic/shippydemo2/consignment-service/proto/vessel"
+	pb "github.com/alactic/shippydemo2/vessel-service/proto/vessel"
 	"github.com/micro/go-micro"
 )
 
-// Repository interface creation
 type Repository interface {
 	FindAvailable(*pb.Specification) (*pb.Vessel, error)
 }
 
-// VesselRepository interface creation
 type VesselRepository struct {
 	vessels []*pb.Vessel
 }
@@ -32,9 +29,10 @@ func (repo *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.Vessel,
 	return nil, errors.New("No vessel found by that spec")
 }
 
+
 // Our grpc service handler
 type service struct {
-	repo repository
+	repo Repository
 }
 
 func (s *service) FindAvailable(ctx context.Context, req *pb.Specification, res *pb.Response) error {
@@ -69,7 +67,3 @@ func main() {
 		fmt.Println(err)
 	}
 }
-
-// func main() {
-// 	fmt.Println("Vessel application starting ...")
-// }

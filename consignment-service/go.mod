@@ -3,6 +3,7 @@ module github.com/alactic/shippydemo2/consignment-service
 go 1.13
 
 require (
+	github.com/alactic/shippydemo2/vessel-service v0.0.0-20191122113331-da282ecacb95 // indirect
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/protobuf v1.3.2
 	github.com/json-iterator/go v1.1.8 // indirect
