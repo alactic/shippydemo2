@@ -193,7 +193,7 @@ func main() {
 
 	srv.Init()
 
-	vesselClient := vesselProto.NewVesselServiceClient("shippy.service.vessel", srv.Client())
+	vesselClient := vesselProto.NewVesselService("shippy.service.vessel", srv.Client())
 
 	// Register handlers
 	pb.RegisterShippingServiceHandler(srv.Server(), &service{repo, vesselClient})
