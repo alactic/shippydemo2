@@ -10,10 +10,12 @@ import (
 	"github.com/micro/go-micro"
 )
 
+// Repository interface creation
 type Repository interface {
 	FindAvailable(*pb.Specification) (*pb.Vessel, error)
 }
 
+// VesselRepository interface creation
 type VesselRepository struct {
 	vessels []*pb.Vessel
 }
